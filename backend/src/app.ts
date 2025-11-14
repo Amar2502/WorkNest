@@ -1,7 +1,9 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import userRoutes from "./routes/userroutes";
+import workspaceRoutes from "./routes/workspaceroutes";
 import cors from "cors";
+import projectRoutes from "./routes/projectroutes";
 
 const app = express();
 
@@ -17,6 +19,8 @@ app.get("/", (req, res) => {
 });
 
 
-app.use("/users", userRoutes);
+app.use("/user", userRoutes);
+app.use("/workspace", workspaceRoutes);
+app.use("/project", projectRoutes);
 
 export default app;
